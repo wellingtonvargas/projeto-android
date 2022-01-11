@@ -1,0 +1,242 @@
+@font-face {
+    font-family: 'Android';
+    src: url(../fontes/idroid.otf) format('opentype');
+}
+
+@import url('https://fonts.googleapis.com/css2? family = Bebas + Neue & display = swap');
+
+:root {
+    --cor0: #c5ebd6;
+    --cor1: #83E1AD;
+    --cor2: #3ddc84;
+    --cor3: #2fa866;
+    --cor4: #1a5c37;
+    --cor5: #063d1e;
+    --font0: Arial, Helvetica, sans-serif;
+    --font1: 'Bebas Neue', cursive;
+    --font2: 'Android', san-serif;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: var(--cor1);
+}
+
+header {
+    background-color: var(--cor4);
+    color: white;
+    background-image: linear-gradient(to bottom, var(--cor3), var(--cor4), var(--cor5));
+    padding-bottom: 20px;
+
+}
+
+header>h1 {
+    text-align: center;
+    padding-top: 25px;
+}
+
+header>p {
+    text-align: center;
+    font-style: italic;
+
+}
+
+nav {
+    background-color: var(--cor5);
+}
+
+nav a {
+    text-decoration: none;
+    color: white;
+    padding: 0px 5px;
+
+}
+
+nav a:hover {
+    background-color: var(--cor4);
+    border-radius: 5px;
+}
+
+article {
+    background-color: white;
+    max-width: 800px;
+    margin: auto;
+    padding: 20px;
+    box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.301);
+}
+
+article>h1 {
+    text-align: center;
+    font-family: var(--font2);
+    font-size: 1.6em;
+    color: var(--cor5);
+
+}
+
+article>h2 {
+    font-family: var(--font1);
+    background-image: linear-gradient(to right, var(--cor1), transparent);
+    color: #1a5c37;
+
+}
+
+p {
+    text-align: justify;
+    margin: 15px 0px;
+    padding: 10px;
+    text-indent: 30px;
+    line-height: 2em;
+    font-family: var(--font1);
+    font-size: 1em;
+
+}
+
+img {
+    width: 100%;
+
+}
+
+.bugdroid {
+    margin: auto;
+    display: block;
+    max-width: 400px;
+}
+
+
+div.video {
+    position: relative;
+    background-color: var(--cor4);
+    margin-left: -20px;
+    margin-right: -20px;
+    margin-bottom: 15px;
+    padding-bottom: 59%;
+}
+
+div.video>iframe {
+    position: absolute;
+    top: 5%;
+    left: 5%;
+    width: 90%;
+    height: 90%;
+
+}
+
+aside {
+    background-color: var(--cor0);
+    border-radius: 10px 10px 0px 0px;
+    box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.288);
+}
+
+h3 {
+    background-color: var(--cor3);
+    color: white;
+    border-radius: 10px 10px 0px 0px;
+    padding: 5px;
+    font-size: 1.3em;
+}
+
+ul {
+    columns: 2;
+    list-style-position: inside;
+    list-style-type: '\00A0\2714\00A0\00A0';
+    font-family: var(--font1);
+}
+
+ul>a {
+    text-decoration: none;
+    color: black;
+}
+
+
+
+
+footer {
+    text-align: center;
+    font-size: 0.8em;
+    padding: 5px;
+
+}
+
+
+
+/* TENTAREI COLOCAR AS CARACTERÍSTICAS DE MODAIS*/
+
+.card_img {
+    width: 300px;
+    height: 300px;
+    overflow: hidden;
+    margin: 25px;
+}
+
+.small_img {
+    height: 100%;
+    cursor: pointer;
+    transition: all linear 0.4s;
+}
+
+.small_img:hover {
+    filter: grayscale(100%);
+    transform: scale(1.1);
+}
+
+.row {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+#modal_img {
+    width: 65vw;
+    transform: scale(0);
+    transition: all linear .3s;
+}
+
+.modal_active #modal_img {
+    transform: scale(1);
+}
+
+.modal {
+
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, .7);
+    position: fixed;
+    visibility: hidden;
+    z-index: 1;
+    opacity: 0;
+    transition: visibility 0.8s linear, opacity 0.5s linear;
+}
+
+.modal_content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+#bt_close {
+    color: #fff;
+    background-color: #000;
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    padding: 5px 10px;
+    font-size: 25px;
+    border: solid 1px #fff;
+    transition: all ease-out .4s;
+    cursor: pointer;
+}
+
+#bt_close:hover {
+    background-color: #f00;
+}
+
+.modal_active {
+    visibility: visible;
+    opacity: 1;
+
+}
